@@ -154,7 +154,11 @@ function anadirDatos(cuenta) {
     //
     const iconoLiga = document.createElement("img");
     iconoLiga.classList.add("iconoLiga");
-    iconoLiga.src = `ranket_iconos/${cuenta.tier}.png`;
+    let img = cuenta.tier;
+    if (img === undefined || img === "UNRANKET"){
+        img = "UNRANKET";
+    }
+    iconoLiga.src = `ranket_iconos/${img}.png`;
     divRango.appendChild(iconoLiga);
     //
     divRango.appendChild(rango);
